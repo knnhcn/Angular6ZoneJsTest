@@ -1,0 +1,23 @@
+<table border="1">
+  <tr>
+      <th>
+          <app-menu></app-menu>
+      </th>
+      <th class="planning-header" 
+          *ngFor="let day of dateArray" 
+          [ngClass]="{'weekend': dayIsWeekend(day) }" 
+          [ngStyle]="{ 'width': '240px' }">
+          {{ day | date: 'EEE, dd. MMMM yyyy' }}
+      </th>
+  </tr>
+  <tr *ngFor="let person of personList">
+      <td>
+          {{ person }}
+      </td>
+      <td *ngFor="let day of dateArray"
+          [ngStyle]="getStyleString(day)"
+          (click)="onClick(day)">
+          CLICK AN WATCH CONSOLE!
+      </td>
+  </tr>
+</table>
