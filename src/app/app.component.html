@@ -3,7 +3,7 @@
       <th>
           <app-menu></app-menu>
       </th>
-      <th class="planning-header" 
+      <th 
           *ngFor="let day of dateArray" 
           [ngClass]="{'weekend': dayIsWeekend(day) }" 
           [ngStyle]="{ 'width': '240px' }">
